@@ -33,3 +33,12 @@ caracteristicile audio.
 | tempo            | double  |
 | time_signature   | int     |
 | track_genre      | string  |
+
+## Incarcarea item-urilor in Recombee
+
+Item-urile sunt incarcate cu ajutorul scriptului `recombee_items.py`.
+Pentru fiecare melodie, valoarea din coloana `track_id` este folosita ca
+`itemId`, iar cele 19 proprietati sunt trimise prin cereri `Batch` de cate
+100 de item-uri. Datasetul contine 6840 de randuri, dintre care 6719 au
+un `track_id` unic; duplicatele sunt ignorate inaintea incarcarii pentru a
+evita suprascrierea item-urilor.
